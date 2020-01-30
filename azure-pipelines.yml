@@ -31,4 +31,4 @@ steps:
     #jdkDirectory: '/usr/java/jdk'
     #publishJUnitResults: true
     #testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package deploy -DmuleDeploy'
+    goals: 'package -e -DmuleDeploy'
