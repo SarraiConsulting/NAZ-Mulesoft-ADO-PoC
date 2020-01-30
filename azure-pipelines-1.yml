@@ -1,0 +1,35 @@
+# Azure DevOps PoC for ABI - Implement a Pipeline
+# Added steps that build, run tests, deploy:
+# Step1:
+# Step2:
+# Step3:
+# Step4:
+# Step5:
+# https://aka.ms/yaml
+
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+    - releases/*
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+- group: CloudHubDeployerCredentials
+
+steps:
+
+- task: Maven@3
+  displayName: 'Maven: Build'
+  inputs:
+    mavenPomFile: 'pom.xml'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: false
+    #testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: clean package deploy -DmuleDeploy -DmuleUsername=$(username) -DmulePassword=$(password)
+
