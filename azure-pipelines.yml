@@ -1,6 +1,10 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
+# Azure DevOps PoC for ABI - Implement a Pipeline
+# Added steps that build, run tests, deploy:
+# Step1:
+# Step2:
+# Step3:
+# Step4:
+# Step5:
 # https://aka.ms/yaml
 
 trigger:
@@ -14,10 +18,16 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: Maven@3
+  displayName: 'Maven: Set version'
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx1024m'
+    # javaHomeOption: 'JDKVersion'
+    javaHomeOption: 'Path'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption:  'x64'
+    jdkDirectory: '/usr/java/jdk'
+    publishJUnitResults: false
+    goals: 'versions:set -DnewVersion=1.$(Build.BuildNumber)'
