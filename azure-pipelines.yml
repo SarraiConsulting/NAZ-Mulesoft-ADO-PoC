@@ -49,6 +49,14 @@ steps:
   inputs:
     #sonarQubeRunAnalysis: true
     #sqMavenPluginVersionChoice: 'latest'
-    checkStyleRunAnalysis: true
-    pmdRunAnalysis: true
-    findBugsRunAnalysis: true
+    #checkStyleRunAnalysis: true
+    #pmdRunAnalysis: true
+    #findBugsRunAnalysis: true
+
+- task: CopyFiles@2
+  displayName: 'Copy jar and pom to artifact staging directory'
+  inputs:
+    contents: |
+      target/*.jar
+      pom.xml
+    targetFolder: $(Build.ArtifactStagingDirectory)
