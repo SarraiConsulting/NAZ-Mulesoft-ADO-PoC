@@ -47,8 +47,8 @@ steps:
     findBugsRunAnalysis: true
 - task: Maven@3
   inputs:
-    sonarQubeRunAnalysis: true
-    sqMavenPluginVersionChoice: 'latest'
+    #sonarQubeRunAnalysis: true
+    #sqMavenPluginVersionChoice: 'latest'
     checkStyleRunAnalysis: true
     pmdRunAnalysis: true
     findBugsRunAnalysis: true
