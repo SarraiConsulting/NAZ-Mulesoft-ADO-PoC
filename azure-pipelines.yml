@@ -31,15 +31,3 @@ steps:
     jdkDirectory: '/usr/java/jdk'
     publishJUnitResults: false
     goals: 'versions:set -DnewVersion=1.$(Build.BuildNumber)'
-
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
