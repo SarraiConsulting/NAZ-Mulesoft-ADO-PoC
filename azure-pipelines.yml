@@ -32,19 +32,6 @@ steps:
     publishJUnitResults: false
     #testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: package
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    publishJUnitResults: false
-    javaHomeOption: 'JDKVersion'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: true
-    sqMavenPluginVersionChoice: 'latest'
-    checkStyleRunAnalysis: true
-    pmdRunAnalysis: true
-    findBugsRunAnalysis: true
 
 - task: CopyFiles@2
   displayName: 'Copy jar and pom to artifact staging directory'
