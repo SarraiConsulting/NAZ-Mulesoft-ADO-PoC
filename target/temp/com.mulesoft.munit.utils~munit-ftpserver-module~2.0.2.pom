@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.mule.extensions</groupId>
+        <artifactId>mule-core-modules-parent</artifactId>
+        <version>1.1.2</version>
+    </parent>
+
+    <groupId>com.mulesoft.munit.utils</groupId>
+    <artifactId>munit-ftpserver-module</artifactId>
+    <version>2.0.2</version>
+    <packaging>mule-extension</packaging>
+
+    <name>MUnit Utils :: FTP Server</name>
+
+    <properties>
+        <jdk.version>1.8</jdk.version>
+
+
+        <junit.version>4.12</junit.version>
+        <slf4j.api.version>1.6.4</slf4j.api.version>
+        <sshd.core.version>1.0.0</sshd.core.version>
+        <commons.net.version>2.2</commons.net.version>
+        <commons.lang3.version>3.6</commons.lang3.version>
+        <bcprov.jdk15on.version>1.48</bcprov.jdk15on.version>
+        <ftpserver.core.version>1.0.6</ftpserver.core.version>
+        <munit.common.version>2.0.0</munit.common.version>
+
+        <licensePath>../LICENSE_HEADER.txt</licensePath>
+        <formatterConfigPath>../formatter.xml</formatterConfigPath>
+        <jython.standalone.version>2.7.0</jython.standalone.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.sshd</groupId>
+            <artifactId>sshd-core</artifactId>
+            <version>${sshd.core.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>${bcprov.jdk15on.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.ftpserver</groupId>
+            <artifactId>ftpserver-core</artifactId>
+            <version>${ftpserver.core.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.python</groupId>
+            <artifactId>jython-standalone</artifactId>
+            <version>${jython.standalone.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons.lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.mulesoft.munit</groupId>
+            <artifactId>munit-common</artifactId>
+            <version>${munit.common.version}</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.mockito</groupId>
+                    <artifactId>mockito-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>${commons.net.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
