@@ -23,12 +23,13 @@ steps:
   displayName: 'Maven: Build'
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx1024m'
+    #mavenOptions: '-Xmx1024m'
     javaHomeOption: 'JDKVersion'
     #javaHomeOption: 'Path'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
     #jdkDirectory: '/usr/java/jdk'
-    #publishJUnitResults: true
+    publishJUnitResults: false
     #testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package deploy -DmuleDeploy'
+    goals: 'package -e -DmuleDeploy -P ci'
+    #goals: package
