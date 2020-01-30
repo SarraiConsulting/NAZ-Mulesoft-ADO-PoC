@@ -32,5 +32,6 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: false
     #testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: clean package deploy -DmuleDeploy -Dmule.username=$(usernamevar) -Dmule.password=$(passwordvar)
+    goals: clean package deploy -DmuleDeploy
+    # -Dmule.username=$(usernamevar) -Dmule.password=$(passwordvar)
 
