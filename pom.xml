@@ -29,8 +29,6 @@
 					<cloudHubDeployment>
 			            <uri>https://anypoint.mulesoft.com</uri>
 			            <muleVersion>4.2.0</muleVersion>
-			            <username>${ANYPOINT_USERNAME}</username>
-			            <password>${ANYPOINT_PASSWORD}</password>
 			            <applicationName>AzureDevOpsPoC</applicationName>
 			            <environment>Development</environment>
 			            <properties>
