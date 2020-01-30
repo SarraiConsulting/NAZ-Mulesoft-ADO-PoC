@@ -42,7 +42,6 @@
                 <artifactId>munit-maven-plugin</artifactId>
                 <version>${munit.version}</version>
                 <executions>
-                   
                 </executions>
                 <configuration>
                     <coverage>
