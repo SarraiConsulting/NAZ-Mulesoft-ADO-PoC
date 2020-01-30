@@ -8,5 +8,9 @@
 		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
 		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
 	<munit:config name="azuredevopspoc-test-suite.xml" />
+	<flow name="azuredevopspoc-test-suiteFlow" doc:id="f85a976a-0d39-49b6-9edf-3cd01d0e61d9" >
+		<munit:set-null-payload doc:name="Set null payload" doc:id="940c0a19-e754-41ed-a816-36fa41af22e1" />
+	</flow>
+
 
 </mule>
