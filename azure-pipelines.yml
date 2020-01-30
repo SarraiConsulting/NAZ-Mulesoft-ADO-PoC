@@ -31,7 +31,7 @@ steps:
     #jdkDirectory: '/usr/java/jdk'
     publishJUnitResults: false
     #testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: clean package deploy -DmuleDeploy
+    goals: clean package deploy -DmuleDeploy -Dmule.username=$(username) -Dmule.password=$(password)
 
 - task: CopyFiles@2
   displayName: 'Copy jar and pom to artifact staging directory'
