@@ -49,7 +49,7 @@ steps:
   inputs:
     #sonarQubeRunAnalysis: true
     #sqMavenPluginVersionChoice: 'latest'
-    #checkStyleRunAnalysis: true
+    checkStyleRunAnalysis: true
     #pmdRunAnalysis: true
     #findBugsRunAnalysis: true
 
