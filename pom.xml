@@ -4,7 +4,7 @@
 
 	<groupId>com.mycompany</groupId>
 	<artifactId>azuredevopspoc</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>mule-application</packaging>
 
 	<name>azuredevopspoc</name>
@@ -29,15 +29,15 @@
 					<cloudHubDeployment>
 			            <uri>https://anypoint.mulesoft.com</uri>
 			            <muleVersion>4.2.0</muleVersion>
-			            <username>hichemsarrai</username>
-			            <password>Caitlinestduepour20165</password>
-			            <applicationName>AzureDevOpsPoC</applicationName>
-			            <environment>Sandbox</environment>
+			            <username>${muleUsername}</username>
+				    	<password>${mulePassword}</password>
+				        <applicationName>AzureDevOpsPoC</applicationName>
+			            <environment>Development</environment>
 			            <properties>
 			                <key>value</key>
 			            </properties>
         			</cloudHubDeployment>
-				</configuration>
+                </configuration>
 			</plugin>
 		<plugin>
                 <groupId>com.mulesoft.munit.tools</groupId>
@@ -57,6 +57,7 @@
                     <coverage>
                         <runCoverage>true</runCoverage>
                         <formats>
+                        	<format>console</format>
                             <format>html</format>
                         </formats>
                     </coverage>
