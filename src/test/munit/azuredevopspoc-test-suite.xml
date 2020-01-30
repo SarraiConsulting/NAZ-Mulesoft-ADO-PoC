@@ -7,10 +7,6 @@
 		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
 		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
-	<munit:config name="new-test-suite.xml" />
-	<flow name="new-test-suiteFlow" doc:id="264126e7-102c-4633-b117-48b08bbdf60c" >
-		<munit:set-null-payload doc:name="Set null payload" doc:id="2ab899c8-8af0-4751-98fe-601ba121c9af" />
-	</flow>
-
+	<munit:config name="azuredevopspoc-test-suite.xml" />
 
 </mule>
