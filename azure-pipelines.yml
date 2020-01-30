@@ -19,6 +19,15 @@ pool:
 
 steps:
 
-- task: DownloadSecureFile@1
+- task: Maven@3
+  displayName: 'Maven: Set version'
   inputs:
-    secureFile: 'settings.xml'
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx1024m'
+    # javaHomeOption: 'JDKVersion'
+    javaHomeOption: 'Path'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption:  'x64'
+    jdkDirectory: '/usr/java/jdk'
+    publishJUnitResults: false
+    goals: 'versions:set -DnewVersion=1.$(Build.BuildNumber)'
