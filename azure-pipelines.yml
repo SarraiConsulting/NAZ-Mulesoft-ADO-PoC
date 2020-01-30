@@ -18,8 +18,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  usernamevar: hsarrai
-  passwordvar: Caitlinestduepour2016
+- group: CloudHubDeployerCredentials
 
 steps:
 
@@ -32,5 +31,5 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: false
     #testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: clean package deploy -DmuleDeploy -DmuleUsername=$(usernamevar) -DmulePassword=$(passwordvar)
+    goals: clean package deploy -DmuleDeploy -DmuleUsername=$(username) -DmulePassword=$(password)
 
