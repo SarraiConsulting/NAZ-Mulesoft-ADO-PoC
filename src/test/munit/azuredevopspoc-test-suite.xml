@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
-	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xsi:schemaLocation="
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xsi:schemaLocation="
 		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
-		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<munit:config name="azuredevopspoc-test-suite.xml" />
-	<flow name="azuredevopspoc-test-suiteFlow" doc:id="f85a976a-0d39-49b6-9edf-3cd01d0e61d9" >
-		<munit:set-null-payload doc:name="Set null payload" doc:id="940c0a19-e754-41ed-a816-36fa41af22e1" />
-	</flow>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="7f756cae-09d0-4d68-aa87-7d0964a56236" >
+		<http:request-connection host="0.0.0.0" port="8081" />
+	</http:request-config>
+	<munit:test name="azuredevopspoc-test-suiteTest" doc:id="23e1656b-3c46-4081-933c-58e2d0a4b1e3" >
+		<munit:behavior>
+			<munit-tools:spy doc:name="Spy" doc:id="a58b90d2-cb61-4ce4-b802-eb0feb808376" processor="set-payload">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Brand Info" attributeName="value" />
+				</munit-tools:with-attributes>
+			</munit-tools:spy>
+		</munit:behavior>
+		<munit:execution >
+			<set-payload value="Brand Info" doc:name="Set Payload" doc:id="d694c098-4736-4394-b3d7-38d1ce021300" />
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="8f1e8ffb-69cd-4f9e-9fec-fd2424aae24f" expected="Brand Info" message="These two values are equal" actual="#[payload]" />
+		</munit:validation>
+	</munit:test>
 
 
 </mule>
