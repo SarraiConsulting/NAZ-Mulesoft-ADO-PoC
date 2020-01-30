@@ -7,7 +7,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>mule-application</packaging>
 
-	<name>azuredevopspoc2</name>
+	<name>azuredevopspoc</name>
 
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,7 +28,7 @@
 				<configuration>
 					<cloudHubDeployment>
 			            <uri>https://anypoint.mulesoft.com</uri>
-			            <muleVersion>${mule.version}</muleVersion>
+			            <muleVersion>4.2.0</muleVersion>
 			            <username>hichemsarrai</username>
 			            <password>Caitlinestduepour20165</password>
 			            <applicationName>AzureDevOpsPoC</applicationName>
