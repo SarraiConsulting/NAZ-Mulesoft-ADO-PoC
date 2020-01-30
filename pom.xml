@@ -32,7 +32,7 @@
 			            <username>hichemsarrai</username>
 			            <password>Caitlinestduepour20165</password>
 			            <applicationName>AzureDevOpsPoC</applicationName>
-			            <environment>Development</environment>
+			            <environment>Sandbox</environment>
 			            <properties>
 			                <key>value</key>
 			            </properties>
